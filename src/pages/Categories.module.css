@@ -1,0 +1,19 @@
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.buttonList button {
+    width: 80%;
+    margin: 8px 0;
+}

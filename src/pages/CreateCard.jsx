@@ -1,8 +1,11 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CardContext } from "../context/CardContext.jsx";
+import styles from "./CreateCard.module.css";
 
 const CreateCard = () => {
   const { categories, addCard } = useContext(CardContext);
+  const navigate = useNavigate();
 
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -28,8 +31,8 @@ const CreateCard = () => {
   };
 
   return (
-    <div>
-      <h2>Create New Card</h2>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Create New Card</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Categorie:
@@ -82,6 +85,7 @@ const CreateCard = () => {
 
         <button type="submit">Add Card</button>
       </form>
+      <button onClick={() => navigate("/")}>⬅️ Zurück zur Startseite</button>
     </div>
   );
 };

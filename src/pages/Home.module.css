@@ -1,0 +1,21 @@
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
