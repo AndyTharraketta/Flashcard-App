@@ -7,6 +7,7 @@ export const CardProvider = ({ children }) => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [currentTopicId, setCurrentTopicId] = useState(null);
+  const [theme, setTheme] = useState("light");
 
   const getCurrentCards = () => {
     if (!currentTopicId) {
@@ -64,6 +65,9 @@ export const CardProvider = ({ children }) => {
     localStorage.setItem("flashcards", JSON.stringify(categories));
   }, [categories]);
 
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
   // Karte hinzufügen
   const addCard = (categoryId, topicId, newCard) => {
     setCategories((prev) =>
@@ -133,6 +137,10 @@ export const CardProvider = ({ children }) => {
     setIsFlipped(false);
   };
 
+  const toggleTheme = () => {
+    setTheme(prev => (prev === "light" ? "dark" : "light"));
+  };
+
   return (
     <CardContext.Provider
       value={{
@@ -148,6 +156,8 @@ export const CardProvider = ({ children }) => {
         nextCard,
         prevCard,
         flipCard,
+        theme,
+        toggleTheme
       }}
     >
       {children}

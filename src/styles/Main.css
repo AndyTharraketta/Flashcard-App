@@ -1,7 +1,22 @@
+:root {
+  --bg: #fef6f8;
+  --text: #222;
+  --card: #ffffff;
+  --primary: #4a90e2;
+}
+
+.dark {
+  --bg: #1e1e1e;
+  --text: #f5f5f5;
+  --card: #2a2a2a;
+  --primary: #6aa8ff;
+}
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f4f6f8;
+    background-color: var(--bg);
+    color: var(--text);
   }
   
   button {
