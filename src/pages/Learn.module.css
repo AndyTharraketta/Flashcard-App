@@ -16,10 +16,6 @@
     margin-bottom: 10px;
 }
 
-.counter {
-    margin-bottom: 15px;
-}
-
 .flashcard-container {
     perspective: 10000px;
     margin: 20px 0;
@@ -68,4 +64,19 @@
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+}
+
+.progressBarContainer {
+    width: 100%;
+    height: 10px;
+    background: var(--card);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progressBarFill {
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.3s ease;
 }

@@ -17,6 +17,7 @@ const Learn = () => {
   } = useContext(CardContext);
 
   const cards = getCurrentCards();
+  const progress = ((currentCardIndex + 1) / cards.length) * 100;
 
   if (cards.length === 0) {
     return <p>Keine Karten vorhanden</p>;
@@ -30,6 +31,11 @@ const Learn = () => {
       <p className={styles.counter}>
         Card {currentCardIndex + 1} of {cards.length}
       </p>
+
+      <div className={styles.progressBarContainer}>
+        <div className={styles.progressBarFill} style={{ width: ` ${progress}%`}}/>
+      </div>
+        <p className={styles.counter}>{Math.round(progress)}% agbeschlossen</p>
 
       <Flashcard
         question={currentCard.question}
